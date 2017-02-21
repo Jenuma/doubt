@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand" ui-sref="home">Become Rampant</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-class="{'active': $title === 'Blog'}"><a ui-sref="blog">Blog</a></li>
+            <li ng-class="{'active': $title === 'Store'}"><a ui-sref="store">Store</a></li>
+            <li ng-class="{'active': $title === 'About'}"><a ui-sref="about">About</a></li>
+        </ul>
+    </div>
+</nav>

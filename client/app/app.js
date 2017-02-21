@@ -22,9 +22,21 @@
             }
         };
         
+        var aboutState = {
+            name: "about",
+            url: "/about",
+            templateUrl: "/features/about/about.html",
+            controller: "AboutController",
+            controllerAs: "aboutCtrl",
+            resolve: {
+                $title: function() {return "About";}
+            }
+        };
+        
         $locationProvider.html5Mode(true);
         
         $stateProvider.state(homeState);
+        $stateProvider.state(aboutState);
     }
     
     config.$inject = ["$stateProvider", "$locationProvider"];
@@ -33,7 +45,8 @@
         .module("app", [
             "ui.router",
             "ui.router.title",
-            "wgl.controllers.home"
+            "wgl.controllers.home",
+            "wgl.controllers.about"
         ])
         .config(config);
 })();
