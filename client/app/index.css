@@ -11,15 +11,23 @@
 body {
     color: var(--primary-text-color);
     background-color: var(--light-primary-color);
+    
+    font-family: "Open Sans", sans-serif;
 }
 
-h1, p {
-    margin-bottom: 1.5em;
+h1 {
+    text-align: center;
 }
 
 p {
+    margin-bottom: 1.5em;
+    
     font-size: 20px;
     line-height: 180%;
+}
+
+a {
+    text-decoration: underline;
 }
 
 #content {

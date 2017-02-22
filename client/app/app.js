@@ -26,10 +26,26 @@
             name: "about",
             url: "/about",
             templateUrl: "/features/about/about.html",
-            controller: "AboutController",
-            controllerAs: "aboutCtrl",
             resolve: {
                 $title: function() {return "About";}
+            }
+        };
+        
+        var blogState = {
+            name: "blog",
+            url: "/blog",
+            templateUrl: "/features/blog/blog.html",
+            resolve: {
+                $title: function() {return "Blog";}
+            }
+        };
+        
+        var storeState = {
+            name: "store",
+            url: "/store",
+            templateUrl: "/features/store/store.html",
+            resolve: {
+                $title: function() {return "Store";}
             }
         };
         
@@ -37,6 +53,8 @@
         
         $stateProvider.state(homeState);
         $stateProvider.state(aboutState);
+        $stateProvider.state(blogState);
+        $stateProvider.state(storeState);
     }
     
     config.$inject = ["$stateProvider", "$locationProvider"];
@@ -45,8 +63,7 @@
         .module("app", [
             "ui.router",
             "ui.router.title",
-            "wgl.controllers.home",
-            "wgl.controllers.about"
+            "wgl.controllers.home"
         ])
         .config(config);
 })();
