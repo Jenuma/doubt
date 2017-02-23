@@ -1,7 +1,6 @@
 /* navbar */
 .navbar-default {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 50px;
     
     background-color: var(--dark-primary-color);
     border-color: var(--dark-primary-color);
@@ -10,15 +9,15 @@
 }
 
 /* title */
-.navbar-default .navbar-brand {   
-    color: var(--light-primary-color);
+.navbar-default .navbar-brand {
+    color: var(--accent-color);
     
     font-size: 30px;
     text-decoration: none;
 }
 
 .navbar-default .navbar-brand:focus {
-    color: var(--light-primary-color);
+    color: var(--accent-color);
     
     text-decoration: none;
 }
@@ -26,19 +25,19 @@
 .navbar-default .navbar-brand:hover {
     color: var(--accent-color);
     
-    text-decoration: none;
+/*    text-decoration: underline;*/
 }
 
 /* link */
 .navbar-default .navbar-nav > li > a {
-    color: var(--light-primary-color);
+    color: var(--accent-color);
     
     font-size: 20px;
     text-decoration: none;
 }
 
 .navbar-default .navbar-nav > li > a:focus {
-    color: var(--light-primary-color);
+    color: var(--accent-color);
     
     text-decoration: none;
 }
@@ -46,11 +45,11 @@
 .navbar-default .navbar-nav > li > a:hover {
     color: var(--accent-color);
     
-    text-decoration: none;
+/*    text-decoration: underline;*/
 }
 
 .navbar-default .navbar-nav > .active > a:focus {
-    color: var(--light-primary-color);
+    color: var(--accent-color);
     background-color: var(--dark-primary-color);
     
     text-decoration: none;
@@ -61,7 +60,7 @@
     color: var(--accent-color);
     background-color: var(--dark-primary-color);
     
-    text-decoration: none;
+/*    text-decoration: underline;*/
 }
 
 .navbar-default .navbar-nav > .open > a:focus {
@@ -76,7 +75,7 @@
     color: var(--accent-color);
     background-color: var(--dark-primary-color);
     
-    text-decoration: none;
+/*    text-decoration: underline;*/
 }
 
 /* caret */
@@ -88,7 +87,7 @@
 }
 
 .navbar-default .navbar-nav > .dropdown > a:focus .caret {
-    color: var(--light-primary-color);
+    color: var(--dark-primary-color);
     background-color: var(--dark-primary-color);
     
     text-decoration: none;
@@ -102,7 +101,7 @@
 }
 
 .navbar-default .navbar-nav > .open > a:focus .caret {
-    color: var(--light-primary-color);
+    color: var(--dark-primary-color);
     background-color: var(--dark-primary-color);
     
     text-decoration: none;
@@ -118,11 +117,11 @@
 
 /* mobile version */
 .navbar-default .navbar-toggle {
-    border-color: var(--divider-color);
+    border-color: var(--light-primary-color);
 }
 
 .navbar-default .navbar-toggle:focus {
-    color: var(--light-primary-color);
+    color: var(--dark-primary-color);
     background-color: var(--dark-primary-color);
 }
 
@@ -137,13 +136,13 @@
 @media (max-width: 767px) {
     
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color:var(--light-primary-color);
+        color:var(--dark-primary-color);
         
         text-decoration: none;
     }
     
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: var(--light-primary-color);
+        color: var(--dark-primary-color);
         background-color: var(--dark-primary-color);
         
         text-decoration: none;
