@@ -7,7 +7,7 @@
         
         <base href="/">
         
-        <title ng-bind="$title + ' - Become Rampant'">Become Rampant</title>
+        <title ng-bind="$title">Become Rampant</title>
         
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -30,5 +30,8 @@
         <div id="content">
             <ui-view></ui-view>
         </div>
+        
+        <div id="subscribe" ng-include="'/features/subscribe/subscribe.html'"></div>
+        <div id="footer" ng-include="'/features/footer/footer.html'"></div>
     </body>
 </html>

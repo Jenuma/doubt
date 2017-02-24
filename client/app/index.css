@@ -6,14 +6,14 @@
     --secondary-text-color: #757575;
     --accent-color: #D67902;
     --divider-color: #BDBDBD;
-    --visited-color: #663399;
+    --visited-color: #AB6001;
 }
 
 body {
-    color: var(--primary-text-color);
-    background-color: #E9EBEE;
-    
     font-family: "Open Sans", sans-serif;
+    
+    color: var(--primary-text-color);
+    background-color: var(--light-primary-color);
     
     backface-visibility: hidden;
     -o-backface-visibility: hidden;
@@ -36,43 +36,11 @@ a {
     position: relative;
     
     color: var(--accent-color);
-    text-decoration: none;
-}
-
-a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--accent-color);
-    visibility: hidden;
-    
-    transform: scaleX(0);
-    -o-transform: scaleX(0);
-    -moz-transform: scaleX(0);
-    -webkit-transform: scaleX(0);
-    
-    transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-}
-
-a:hover:before {
-    visibility: visible;
-    
-    transform: scaleX(1);
-    -o-transform: scaleX(1);
-    -moz-transform: scaleX(1);
-    -webkit-transform: scaleX(1);
+    text-decoration: underline;
 }
 
 a:hover {
-    color: var(--accent-color);
-    
-    text-decoration: none;
+    color: var(--visited-color);
 }
 
 /*
@@ -84,13 +52,38 @@ a:visited {
 #content {
     display: block;
     
-    padding: 1em 3em;
-    
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     
     max-width: 50%;
     
     border-radius: 5px;
-    background-color: var(--light-primary-color);
+}
+
+/*
+ * Mobile
+ */
+@media only screen and
+    (max-device-width: 320px),
+    (max-device-width: 375px),
+    (max-device-width: 425px) {
+        #content {
+            margin: 1em;
+
+            max-width: 100%;
+
+            font-size: 0.25em;
+        }
+}
+
+/*
+ * Tablet
+ */
+@media only screen and (max-device-width: 768px) {
+    #content {
+        margin: 0 3em;
+
+        max-width: 100%;
+
+        font-size: 0.25em;
+    }
 }

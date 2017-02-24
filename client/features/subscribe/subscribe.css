@@ -1,0 +1,79 @@
+#subscribe-container {
+    color: var(--accent-color);
+    background-color: var(--dark-primary-color);
+    
+    text-align: center;
+}
+
+#subscribe-content {
+    margin: 0 auto;
+    padding-top: 2em;
+    padding-bottom: 3em;
+    
+    width: 50%;
+}
+
+/*
+ * Bootstrap Overrides
+ */
+.input-group {
+    margin: 0 auto;
+    max-width: 50%;
+}
+
+.form-control {
+    border: none;
+    box-shadow: none;
+}
+
+.form-control, .btn {
+    border-radius: 0;
+}
+
+.btn-primary {
+    height: 34px;
+    
+    color: var(--accent-color);
+    background-color: var(--light-primary-color);
+    
+    border-top: none;
+    border-bottom:none;
+    border-left: 1px solid black;
+    border-right: none;
+    
+    -o-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+
+.btn-primary:hover {
+    color: var(--light-primary-color);
+    background-color: var(--accent-color);
+}
+
+/*
+ * Mobile
+ */
+@media only screen and (max-device-width: 480px) {
+    #subscribe-content {
+        width: 90%;
+    }
+}
+
+/*
+ * Tablet
+ */
+@media only screen and (max-device-width: 768px) {
+    #subscribe-content {
+        margin: 0 auto;
+        
+        width: 100%;
+        
+        font-size: 0.25em;
+    }
+    
+    .input-group {
+        margin: 0 auto;
+        max-width: 80%;
+    }
+}

@@ -18,7 +18,7 @@
             controller: "HomeController",
             controllerAs: "homeCtrl",
             resolve: {
-                $title: function() {return "Home";}
+                $title: function() {return "Become Rampant";}
             }
         };
         
@@ -27,7 +27,7 @@
             url: "/about",
             templateUrl: "/features/about/about.html",
             resolve: {
-                $title: function() {return "About";}
+                $title: function() {return "About - Become Rampant";}
             }
         };
         
@@ -36,7 +36,7 @@
             url: "/blog",
             templateUrl: "/features/blog/blog.html",
             resolve: {
-                $title: function() {return "Blog";}
+                $title: function() {return "Blog - Become Rampant";}
             }
         };
         
@@ -45,7 +45,7 @@
             url: "/store",
             templateUrl: "/features/store/store.html",
             resolve: {
-                $title: function() {return "Store";}
+                $title: function() {return "Store - Become Rampant";}
             }
         };
         

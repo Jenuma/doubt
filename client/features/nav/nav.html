@@ -1,14 +1,21 @@
 <link rel="stylesheet" type="text/css" href="/features/nav/nav.css"/>
 
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header pull-left">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" ui-sref="home">Become Rampant</a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li ng-class="{'active': $title === 'Blog'}"><a ui-sref="blog">Blog</a></li>
-            <li ng-class="{'active': $title === 'Store'}"><a ui-sref="store">Store</a></li>
-            <li ng-class="{'active': $title === 'About'}"><a ui-sref="about">About</a></li>
-        </ul>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-class="{'active': $title === 'Blog - Become Rampant'}"><a ui-sref="blog">Blog</a></li>
+                <li ng-class="{'active': $title === 'Store - Become Rampant'}"><a ui-sref="store">Store</a></li>
+                <li ng-class="{'active': $title === 'About - Become Rampant'}"><a ui-sref="about">About</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
