@@ -131,9 +131,7 @@
     -webkit-transform: scaleX(1);
 }
 
-/*
- * Mobile
- */
+
 .navbar-default .navbar-toggle {
     border-color: var(--dark-primary-color);
 }
@@ -147,7 +145,14 @@
     background-color: var(--light-primary-color);
 }
 
+/*
+ * Mobile
+ */
 @media only screen and (max-width: 768px) {
+    .navbar-default .navbar-brand {
+        padding: 15px 10px;
+        font-size: 2em;
+    }
     
     .navbar-default .navbar-nav .open .dropdown-menu > li > a,
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
@@ -161,6 +166,10 @@
         background-color: var(--dark-primary-color);
         
         text-decoration: none;
+    }
+    
+    h1 {
+        font-size: 10em;
     }
 }
 
