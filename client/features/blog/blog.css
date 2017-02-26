@@ -1,0 +1,57 @@
+#content {
+    max-width: 100%;
+}
+
+#blog-container {
+    text-align: center;
+}
+
+.article-panel {
+    display: inline-block;
+    
+    position: relative;
+    
+    margin: 3em;
+    
+    text-align: left;
+}
+
+.article-thumb {
+    width: 400px;
+    height: 300px;
+}
+
+.overlay {
+    position: absolute;
+    top: 220px;
+    left: 0;
+    
+    width: 100%;
+    height: 80px;
+    
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.article-title {
+    position: absolute;
+    top: 220px;
+    left: 0;
+    
+    padding: 0.5em;
+    
+    color: var(--light-primary-color);
+    
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.article-link {
+    position:absolute; 
+    top:0;
+    left: 0;
+    
+    width:100%;
+    height:100%;
+
+    z-index: 1;
+}

@@ -1,3 +1,11 @@
+<link rel="stylesheet" type="text/css" href="/features/blog/blog.css"/>
+
 <div id="blog-container">
-    <h1>Become Rampant Blog</h1>
+    <div class="article-panel" ng-repeat="article in blogCtrl.articles">
+        <img ng-src="{{article.photoUrl}}" class="article-thumb img-responsive"/><br />
+        <div class="overlay"></div>
+        <span class="article-title">{{article.title}}</span>
+        {{article.date}}
+        <a class="article-link" ui-sref="article({ articleTitle: 'sample' })"></a>
+    </div>
 </div>

@@ -35,8 +35,21 @@
             name: "blog",
             url: "/blog",
             templateUrl: "/features/blog/blog.html",
+            controller: "BlogController",
+            controllerAs: "blogCtrl",
             resolve: {
                 $title: function() {return "Blog - Become Rampant";}
+            }
+        };
+        
+        var articleState = {
+            name: "article",
+            url: "/blog/:articleTitle",
+            templateUrl: "/features/article/article.html",
+            controller: "ArticleController",
+            controllerAs: "articleCtrl",
+            resolve: {
+                $title: function() {return "Article - Become Rampant";}
             }
         };
         
@@ -54,6 +67,7 @@
         $stateProvider.state(homeState);
         $stateProvider.state(aboutState);
         $stateProvider.state(blogState);
+        $stateProvider.state(articleState);
         $stateProvider.state(storeState);
     }
     
@@ -63,7 +77,8 @@
         .module("app", [
             "ui.router",
             "ui.router.title",
-            "wgl.controllers.home"
+            "wgl.controllers.home",
+            "wgl.controllers.blog"
         ])
         .config(config);
 })();
