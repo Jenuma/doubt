@@ -75,10 +75,12 @@
     
     angular
         .module("app", [
+            "ngSanitize",
             "ui.router",
             "ui.router.title",
             "wgl.controllers.home",
-            "wgl.controllers.blog"
+            "wgl.controllers.blog",
+            "wgl.controllers.article"
         ])
         .config(config);
 })();

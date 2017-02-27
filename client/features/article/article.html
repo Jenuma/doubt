@@ -1,3 +1,9 @@
+<link rel="stylesheet" type="text/css" href="/features/article/article.css"/>
+
 <div id="article-container">
-    <p>Foo bar bat</p>
+    <h1>{{articleCtrl.thisArticle.title}}</h1>
+    
+    <img ng-src="{{articleCtrl.thisArticle.photoUrl}}" class="article-photo img-responsive"/>
+    
+    <p ng-bind-html="articleCtrl.thisArticle.content"></p>
 </div>
