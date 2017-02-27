@@ -85,6 +85,24 @@
             }
         }
         
+        var termsOfServiceState = {
+            name: "termsOfService",
+            url: "/tos",
+            templateUrl: "/features/termsOfService/termsOfService.html",
+            resolve: {
+                $title: function() {return "Terms of Service - Become Rampant";}
+            }
+        }
+        
+        var privacyPolicyState = {
+            name: "privacyPolicy",
+            url: "/privacy",
+            templateUrl: "/features/privacyPolicy/privacyPolicy.html",
+            resolve: {
+                $title: function() {return "Privacy Policy - Become Rampant";}
+            }
+        }
+        
         $locationProvider.html5Mode(true);
         
         $stateProvider.state(homeState);
@@ -93,6 +111,8 @@
         $stateProvider.state(articleState);
         $stateProvider.state(storeState);
         $stateProvider.state(donateState);
+        $stateProvider.state(termsOfServiceState);
+        $stateProvider.state(privacyPolicyState);
     }
     
     config.$inject = ["$stateProvider", "$locationProvider"];

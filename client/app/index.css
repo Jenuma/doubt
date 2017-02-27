@@ -43,6 +43,10 @@ a:hover {
     color: var(--visited-color);
 }
 
+a:focus {
+    color: var(--accent-color);
+}
+
 /*
 a:visited {
     color: var(--visited-color);
