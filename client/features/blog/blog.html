@@ -1,11 +1,13 @@
 <link rel="stylesheet" type="text/css" href="/features/blog/blog.css"/>
 
 <div id="blog-container">
-    <div class="article-panel" ng-repeat="article in blogCtrl.articles">
-        <img ng-src="{{article.photoUrl}}" class="article-thumb img-responsive"/><br />
-        <div class="overlay"></div>
-        <span class="article-title">{{article.title}}</span>
+    <div class="article-panel-outer" ng-repeat="article in blogCtrl.articles">
+        <div class="article-panel">
+            <img ng-src="{{article.photoUrl}}" class="article-thumb img-responsive"/><br />
+            <div class="overlay"></div>
+            <span class="article-title">{{article.title}}</span>
+            <a class="article-link" ui-sref="article({articleTitle: article.link})"></a>
+        </div>
         {{article.date}}
-        <a class="article-link" ui-sref="article({ articleTitle: 'sample' })"></a>
     </div>
 </div>
