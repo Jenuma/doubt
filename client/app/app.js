@@ -11,6 +11,17 @@
     
     function config($stateProvider, $locationProvider) {
         
+        function getThisArticle($stateParams, articleService) {
+            return articleService.getThisArticle($stateParams.articleTitle);
+        }
+        
+        function getThisArticleTitle(thisArticle) {
+            return thisArticle.title + " - Become Rampant";
+        }
+        
+        getThisArticle.$inject = ["$stateParams", "articleService"];
+        getThisArticleTitle.$inject = ["thisArticle"];
+        
         var homeState = {
             name: "home",
             url: "/",
@@ -49,8 +60,11 @@
             controller: "ArticleController",
             controllerAs: "articleCtrl",
             resolve: {
-                $title: function() {return "Article - Become Rampant";}
+                thisArticle: getThisArticle,
+                $title: getThisArticleTitle
             }
+            
+            
         };
         
         var storeState = {
@@ -62,6 +76,15 @@
             }
         };
         
+        var donateState = {
+            name: "donate",
+            url: "/donate",
+            templateUrl: "/features/donate/donate.html",
+            resolve: {
+                $title: function() {return "Donate - Become Rampant";}
+            }
+        }
+        
         $locationProvider.html5Mode(true);
         
         $stateProvider.state(homeState);
@@ -69,6 +92,7 @@
         $stateProvider.state(blogState);
         $stateProvider.state(articleState);
         $stateProvider.state(storeState);
+        $stateProvider.state(donateState);
     }
     
     config.$inject = ["$stateProvider", "$locationProvider"];
@@ -78,6 +102,7 @@
             "ngSanitize",
             "ui.router",
             "ui.router.title",
+            "wgl.services.article",
             "wgl.controllers.home",
             "wgl.controllers.blog",
             "wgl.controllers.article"
