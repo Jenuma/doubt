@@ -9,13 +9,13 @@
 (function() {
     "use strict";
     
-    function ArticleController(thisArticle) {
+    function ArticleController(currentArticle) {
         var vm = this;
         
-        vm.thisArticle = thisArticle;
+        vm.article = currentArticle;
     }
     
-    ArticleController.$inject = ["thisArticle"];
+    ArticleController.$inject = ["currentArticle"];
     
     angular
         .module("wgl.controllers.article", [])

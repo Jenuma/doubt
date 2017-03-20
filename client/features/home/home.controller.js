@@ -9,13 +9,11 @@
 (function() {
     "use strict";
     
-    
-    
-    function HomeController() {
-        
+    function HomeController($http) {
+
     }
     
-    HomeController.$inject = [];
+    HomeController.$inject = ["$http"];
     
     angular
         .module("wgl.controllers.home", [])

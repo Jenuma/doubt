@@ -11,16 +11,16 @@
     
     function config($stateProvider, $locationProvider) {
         
-        function getThisArticle($stateParams, articleService) {
-            return articleService.getThisArticle($stateParams.articleTitle);
+        function getArticle($stateParams, articleService) {
+            return articleService.getArticle($stateParams.articleRoute);
         }
         
-        function getThisArticleTitle(thisArticle) {
-            return thisArticle.title + " - Become Rampant";
+        function getArticleTitle(currentArticle) {
+            return currentArticle.title + " - Become Rampant";
         }
         
-        getThisArticle.$inject = ["$stateParams", "articleService"];
-        getThisArticleTitle.$inject = ["thisArticle"];
+        getArticle.$inject = ["$stateParams", "articleService"];
+        getArticleTitle.$inject = ["currentArticle"];
         
         var homeState = {
             name: "home",
@@ -55,16 +55,14 @@
         
         var articleState = {
             name: "article",
-            url: "/blog/:articleTitle",
+            url: "/blog/:articleRoute",
             templateUrl: "/features/article/article.html",
             controller: "ArticleController",
             controllerAs: "articleCtrl",
             resolve: {
-                thisArticle: getThisArticle,
-                $title: getThisArticleTitle
+                currentArticle: getArticle,
+                $title: getArticleTitle
             }
-            
-            
         };
         
         var storeState = {

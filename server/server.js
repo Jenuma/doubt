@@ -7,8 +7,10 @@
 // Date: 20 February 2017                                                                                   |         
 // ---------------------------------------------------------------------------------------------------------|
 var express = require("express");
+var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var path = require("path");
+var dbConfig = require("../config/dbConfig");
 
 var app = express();
 
@@ -26,6 +28,20 @@ app.use("/features", express.static(__dirname + "/../client/features"));
 app.use("/assets", express.static(__dirname + "/../assets"));
 
 app.use(express.static(__dirname + "/../client/app"));
+
+// ---------------------------------------------------------------------------------------------------------|
+// MongoDB Connection Logic                                                                                 |
+// ---------------------------------------------------------------------------------------------------------|
+mongoose.connect(dbConfig.testUrl);
+var connection = mongoose.connection;
+
+connection.on("error", console.error.bind(console, "Connection error: "));
+
+connection.once("open", function() {
+   console.log(`Connected to database.`);
+});
+
+mongoose.Promise = global.Promise;
 
 // ---------------------------------------------------------------------------------------------------------|
 // Routes                                                                                                   |
