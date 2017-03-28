@@ -18,6 +18,6 @@
     ArticleController.$inject = ["currentArticle"];
     
     angular
-        .module("wgl.controllers.article", [])
+        .module("br.controllers.article", [])
         .controller("ArticleController", ArticleController);
 })();

@@ -32,19 +32,8 @@
             name: "home",
             url: "/",
             templateUrl: "/features/home/home.html",
-            controller: "HomeController",
-            controllerAs: "homeCtrl",
             resolve: {
                 $title: function() {return "Become Rampant";}
-            }
-        };
-        
-        var aboutState = {
-            name: "about",
-            url: "/about",
-            templateUrl: "/features/about/about.html",
-            resolve: {
-                $title: function() {return "About - Become Rampant";}
             }
         };
         
@@ -119,7 +108,6 @@
         $locationProvider.html5Mode(true);
         
         $stateProvider.state(homeState);
-        $stateProvider.state(aboutState);
         $stateProvider.state(blogState);
         $stateProvider.state(articleState);
         $stateProvider.state(storeState);
@@ -136,10 +124,9 @@
             "ngSanitize",
             "ui.router",
             "ui.router.title",
-            "wgl.services.article",
-            "wgl.controllers.home",
-            "wgl.controllers.blog",
-            "wgl.controllers.article"
+            "br.services.article",
+            "br.controllers.blog",
+            "br.controllers.article"
         ])
         .config(config);
 })();

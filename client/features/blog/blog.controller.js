@@ -24,6 +24,6 @@
     BlogController.$inject = ["articleService"];
     
     angular
-        .module("wgl.controllers.blog", [])
+        .module("br.controllers.blog", [])
         .controller("BlogController", BlogController);
 })();

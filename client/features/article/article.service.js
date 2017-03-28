@@ -64,6 +64,6 @@
     articleService.$inject = ["$http"];
     
     angular
-        .module("wgl.services.article", [])
+        .module("br.services.article", [])
         .service("articleService", articleService);
 })();
