@@ -11,6 +11,9 @@
     
     function config($stateProvider, $locationProvider) {
         
+        // -------------------------------------------------------------------------------------------------|
+        // Resolve Functions                                                                                |
+        // -------------------------------------------------------------------------------------------------|
         function getArticle($stateParams, articleService) {
             return articleService.getArticle($stateParams.articleRoute);
         }
@@ -22,6 +25,9 @@
         getArticle.$inject = ["$stateParams", "articleService"];
         getArticleTitle.$inject = ["currentArticle"];
         
+        // -------------------------------------------------------------------------------------------------|
+        // States                                                                                           |
+        // -------------------------------------------------------------------------------------------------|
         var homeState = {
             name: "home",
             url: "/",
@@ -81,7 +87,7 @@
             resolve: {
                 $title: function() {return "Donate - Become Rampant";}
             }
-        }
+        };
         
         var termsOfServiceState = {
             name: "termsOfService",
@@ -90,7 +96,7 @@
             resolve: {
                 $title: function() {return "Terms of Service - Become Rampant";}
             }
-        }
+        };
         
         var privacyPolicyState = {
             name: "privacyPolicy",
@@ -99,7 +105,16 @@
             resolve: {
                 $title: function() {return "Privacy Policy - Become Rampant";}
             }
-        }
+        };
+        
+        var notFoundState = {
+            name: "notFound",
+            url: "*path",
+            templateUrl: "/features/error/404.html",
+            resolve: {
+                $title: function() {return "404 - Not Found";}
+            }
+        };
         
         $locationProvider.html5Mode(true);
         
@@ -111,6 +126,7 @@
         $stateProvider.state(donateState);
         $stateProvider.state(termsOfServiceState);
         $stateProvider.state(privacyPolicyState);
+        $stateProvider.state(notFoundState);
     }
     
     config.$inject = ["$stateProvider", "$locationProvider"];
