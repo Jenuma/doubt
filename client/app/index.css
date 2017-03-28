@@ -9,12 +9,22 @@
     --visited-color: #AB6001;
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    
+    min-height: 100%;
+    
     font-family: "Open Sans", sans-serif;
     
     color: var(--primary-text-color);
     background-color: var(--light-primary-color);
     
+    /* Prevents link flickering: */
     backface-visibility: hidden;
     -o-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -55,10 +65,10 @@ a:visited {
 
 #content {
     display: block;
+    flex: 1;
     
     margin: 0 auto;
-    
-    max-width: 50%;
+    width: 50%;
     
     border-radius: 5px;
 }
@@ -72,7 +82,6 @@ a:visited {
     (max-device-width: 425px) {
         #content {
             margin: 1em;
-
             max-width: 100%;
 
             font-size: 0.25em;
@@ -85,7 +94,6 @@ a:visited {
 @media only screen and (max-device-width: 768px) {
     #content {
         margin: 0 3em;
-
         max-width: 100%;
 
         font-size: 0.25em;
