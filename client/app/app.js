@@ -37,6 +37,15 @@
             }
         };
         
+        var aboutState = {
+            name: "about",
+            url: "/about",
+            templateUrl: "/features/about/about.html",
+            resolve: {
+                $title: function() {return "About - Become Rampant";}
+            }
+        };
+        
         var blogState = {
             name: "blog",
             url: "/blog",
@@ -60,14 +69,14 @@
             }
         };
         
-        var storeState = {
-            name: "store",
-            url: "/store",
-            templateUrl: "/features/store/store.html",
-            resolve: {
-                $title: function() {return "Store - Become Rampant";}
-            }
-        };
+//        var storeState = {
+//            name: "store",
+//            url: "/store",
+//            templateUrl: "/features/store/store.html",
+//            resolve: {
+//                $title: function() {return "Store - Become Rampant";}
+//            }
+//        };
         
         var donateState = {
             name: "donate",
@@ -75,6 +84,17 @@
             templateUrl: "/features/donate/donate.html",
             resolve: {
                 $title: function() {return "Donate - Become Rampant";}
+            }
+        };
+        
+        var searchState = {
+            name: "search",
+            url: "/search/:query",
+            templateUrl: "/features/search/search.html",
+            controller: "SearchController",
+            controllerAs: "searchCtrl",
+            resolve: {
+                $title: function() {return "Search - Become Rampant";}
             }
         };
         
@@ -108,10 +128,12 @@
         $locationProvider.html5Mode(true);
         
         $stateProvider.state(homeState);
+        $stateProvider.state(aboutState);
         $stateProvider.state(blogState);
         $stateProvider.state(articleState);
-        $stateProvider.state(storeState);
+        //$stateProvider.state(storeState);
         $stateProvider.state(donateState);
+        $stateProvider.state(searchState);
         $stateProvider.state(termsOfServiceState);
         $stateProvider.state(privacyPolicyState);
         $stateProvider.state(notFoundState);
@@ -124,8 +146,12 @@
             "ngSanitize",
             "ui.router",
             "ui.router.title",
+            "br.services.subscribe",
             "br.services.article",
+            "br.controllers.nav",
+            "br.controllers.subscribe",
             "br.controllers.blog",
+            "br.controllers.search",
             "br.controllers.article"
         ])
         .config(config);

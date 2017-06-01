@@ -21,32 +21,42 @@
         <script src="/angular-ui-router-title/angular-ui-router-title.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
+        <script src="/features/subscribe/subscribe.service.js"></script>
         <script src="/features/article/article.service.js"></script>
+        
+        <script src="/features/nav/nav.controller.js"></script>
+        <script src="/features/subscribe/subscribe.controller.js"></script>
         <script src="/features/blog/blog.controller.js"></script>
         <script src="/features/article/article.controller.js"></script>
+        <script src="/features/search/search.controller.js"></script>
         <script src="/app/app.js"></script>
     </head>
     <body>
+        <div id="ie-warning">
+            Become Rampant is not compatible with Internet Explorer. Some features may not work correctly and the page may appear unsightly. Click <a href="#" onclick="window.location='/features/ie/ie.html'">here</a> for more details.
+        </div>
+        
         <script>
-            console.log(navigator.userAgent);
-                if ((navigator.appName == 'Microsoft Internet Explorer') || (/Edge/.test(navigator.userAgent)) || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))) {
-                    var c = document.cookie.split("; ");
-                    var warned = false;
-                    
-                    for(var i = c.length-1; i >=0; i--) {
-                        if(c[i] === "warned=1") {
-                            warned = true;
-                        }
-                    }
-                    
-                    if(!warned) {
-                        window.location = "/features/ie/ie.html";
-                    }
-                }
+            if ((navigator.appName == 'Microsoft Internet Explorer') || (/Edge/.test(navigator.userAgent)) || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))) {
+                $("#ie-warning").show();
+                
+//                var c = document.cookie.split("; ");
+//                var warned = false;
+//
+//                for(var i = c.length-1; i >=0; i--) {
+//                    if(c[i] === "warned=1") {
+//                        warned = true;
+//                    }
+//                }
+//
+//                if(!warned) {
+//                    window.location = "/features/ie/ie.html";
+//                }
+            }
         </script>
         
         <div id="nav" ng-include="'/features/nav/nav.html'"></div>
-        
+
         <div id="content">
             <ui-view></ui-view>
         </div>

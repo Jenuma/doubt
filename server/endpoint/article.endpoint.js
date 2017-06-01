@@ -34,11 +34,30 @@ module.exports = function() {
             })
             .catch(function(err) {
                 console.log(err);
+            });
+    }
+    
+    function searchArticles(req, res, next) {
+        var query = req.params.query;
+        var regex = new RegExp(query, "i");
+        
+        var Article = require("../model/article").Article;
+        Article.find({$or:[{"title": regex}, {"content":regex}]}, {"_id": 0}).exec()
+            .then(function(result) {
+                if(result) {
+                    res.status(200).json(result);
+                } else {
+                    res.status(404).send("Search returned no results.");
+                }
             })
+            .catch(function(err) {
+                console.log(err);
+            });
     }
     
     router.get("/", getThumbnails);
     router.get("/:articleRoute", getArticle);
+    router.get("/search/:query", searchArticles);
     
     return router;
 };

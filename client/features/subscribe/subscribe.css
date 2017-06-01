@@ -1,6 +1,6 @@
 #subscribe-container {
-    color: var(--accent-color);
-    background-color: var(--dark-primary-color);
+    color: #D67902;
+    background-color: #000000;
     
     text-align: center;
 }
@@ -33,8 +33,8 @@
 .btn-primary {
     height: 34px;
     
-    color: var(--accent-color);
-    background-color: var(--light-primary-color);
+    color: #D67902;
+    background-color: #FFFFFF;
     
     border-top: none;
     border-bottom:none;
@@ -47,8 +47,8 @@
 }
 
 .btn-primary:hover {
-    color: var(--light-primary-color);
-    background-color: var(--accent-color);
+    color: #FFFFFF;
+    background-color: #D67902;
 }
 
 /*

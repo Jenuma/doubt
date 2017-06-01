@@ -1,8 +1,8 @@
 #footer-content {
     padding: 0.5em;
     
-    color: var(--accent-color);
-    background-color: var(--dark-primary-color);
+    color: #D67902;
+    background-color: #000000;
     
     text-align: center;
 }
@@ -24,7 +24,7 @@
 }
 
 #legal > li > a:hover {
-    color: var(--accent-color);
+    color: #D67902;
 }
 
 /*
@@ -40,7 +40,7 @@
     width: 100%;
     height: 2px;
     
-    background-color: var(--accent-color);
+    background-color: #D67902;
     visibility: hidden;
     
     transform: scaleX(0);

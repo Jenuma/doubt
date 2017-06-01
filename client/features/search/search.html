@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="/features/search/search.css"/>
+
+<div id="search-container">
+    <h1>Search results for: {{searchCtrl.query}}</h1>
+    <div class="article-panel-outer" ng-repeat="result in searchCtrl.results">
+        <div class="article-panel">
+            <img ng-src="{{'/assets/img/' + result.route + '/1.jpg'}}" class="article-thumb img-responsive"/><br />
+            <div class="overlay"></div>
+            <span class="article-title">{{result.title}}</span>
+            <a class="article-link" ui-sref="article({articleRoute: result.route})"></a>
+        </div>
+        {{result.date}}
+    </div>
+</div>

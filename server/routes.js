@@ -12,6 +12,7 @@ module.exports = function() {
     // -----------------------------------------------------------------------------------------------------|
     // API                                                                                                  |
     // -----------------------------------------------------------------------------------------------------|
+    router.use("/api/subscribe", require("./endpoint/subscribe.endpoint")());
     router.use("/api/articles", require("./endpoint/article.endpoint")());
     
     return router;

@@ -3,7 +3,7 @@
 <div id="blog-container">
     <div class="article-panel-outer" ng-repeat="thumbnail in blogCtrl.thumbnails">
         <div class="article-panel">
-            <img ng-src="{{'/assets/img/' + thumbnail.route + '.jpg'}}" class="article-thumb img-responsive"/><br />
+            <img ng-src="{{'/assets/img/' + thumbnail.route + '/1.jpg'}}" class="article-thumb img-responsive"/><br />
             <div class="overlay"></div>
             <span class="article-title">{{thumbnail.title}}</span>
             <a class="article-link" ui-sref="article({articleRoute: thumbnail.route})"></a>
