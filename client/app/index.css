@@ -47,7 +47,6 @@ a {
     position: relative;
     
     color: #D67902;
-/*    text-decoration: underline;*/
 }
 
 a:hover {
@@ -63,6 +62,10 @@ a:visited {
     color: var(--visited-color);
 }
 */
+
+.grecaptcha-badge {
+    display: none;
+}
 
 #ie-warning {
     display: none;

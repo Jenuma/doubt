@@ -4,13 +4,15 @@
   "description": "Practice blog application.",
   "main": "server.js",
   "dependencies": {
+    "angular-recaptcha": "^4.1.0",
     "angular-ui-router-title": "0.1.1",
     "body-parser": "1.16.1",
     "express": "4.14.1",
-    "mongoose": "4.9.1"
+    "mongoose": "4.9.1",
+    "request": "^2.81.0"
   },
   "author": "William Reyne",
   "scripts": {
-      "start": "node server/server.js"
+    "start": "node server/server.js"
   }
 }

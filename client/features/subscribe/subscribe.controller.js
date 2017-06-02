@@ -9,21 +9,53 @@
 (function() {
     "use strict";
     
-    function SubscribeController(subscribeService) {
+    function SubscribeController($mdDialog, vcRecaptchaService, subscribeService) {
         var vm = this;
         
+        vm.setWidgetId = function(widgetId) {
+            vm.widgetId = widgetId;
+        };
+        
+        vm.setResponse = function(response) {
+            vm.response = response;
+            vm.subscribe();
+        };
+        
+        vm.reloadRecaptcha = function() {
+            vcRecaptchaService.reload(vm.widgetId);
+            vm.response = null;
+        };
+        
         vm.subscribe = function() {
-            var subscriber = {
+            var userInfo = {
+                recaptchaResponse: vm.response,
                 email: vm.email
             }
             
-            subscribeService.subscribe(subscriber).then(function(response) {
-                vm.result = response;
+            subscribeService.subscribe(userInfo).then(function(response) {
+                var modalTitle = "You are now subscribed to Become Rampant.";
+                var modalTextContent = "You will receive an email anytime a new article is posted.";
+                
+                if(response.substring) {
+                    modalTitle = "You are already subscribed to Become Rampant.";
+                    modalTextContent = "";
+                }
+                
+                $mdDialog.show(
+                    $mdDialog.alert()
+                        .parent(angular.element(document.querySelector("body")))
+                        .clickOutsideToClose(true)
+                        .title(modalTitle)
+                        .textContent(modalTextContent)
+                        .ok("Got it!")
+                );
+                
+                vm.email = "";
             });
         };
     }
     
-    SubscribeController.$inject = ["subscribeService"];
+    SubscribeController.$inject = ["$mdDialog", "vcRecaptchaService", "subscribeService"];
     
     angular
         .module("br.controllers.subscribe", [])

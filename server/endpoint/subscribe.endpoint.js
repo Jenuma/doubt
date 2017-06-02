@@ -8,21 +8,47 @@
 // ---------------------------------------------------------------------------------------------------------|
 module.exports = function() {
     var router = require("express").Router();
+    var request = require("request");
+    
+    var recaptchaConfig = require("../../config/recaptchaConfig");
     
     function subscribe(req, res, next) {
-        var Subscriber = require("../model/subscriber").Subscriber;
+        var userInfo = {
+            secret: recaptchaConfig.secret,
+            response: req.body.recaptchaResponse
+        };
         
-        var newSubscriber = new Subscriber({
-            email: req.body.email
+        request.post({url: "https://www.google.com/recaptcha/api/siteverify", form: userInfo}, function(error, response, body) {
+            var responseObject = JSON.parse(response.body);
+            
+            if(responseObject.success === true) {
+                
+                var Subscriber = require("../model/subscriber").Subscriber;
+                var subscriberEmail = req.body.email;
+                
+                Subscriber.findOne({email: subscriberEmail}, {"_id": 0}).exec()
+                    .then(function(result) {
+                        if(!result) {
+                            var newSubscriber = new Subscriber({
+                                email: subscriberEmail
+                            });
+
+                            newSubscriber.save()
+                                .then(function(result) {
+                                    res.status(201).json(result);
+                                })
+                                .catch(function(err) {
+                                    console.log(err);
+                                });
+                        } else {
+                            res.status(200).send("Email address is already subscribed.");
+                        }
+                    })
+                    .catch(function(err) {
+                        console.log(err);
+                    });
+                }
         });
-        
-        newSubscriber.save()
-            .then(function(result) {
-                res.status(201).json(result);
-            })
-            .catch(function(err) {
-                console.log(err);
-            });
     }
     
     router.post("/", subscribe);

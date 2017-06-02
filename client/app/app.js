@@ -143,7 +143,11 @@
     
     angular
         .module("app", [
+            "vcRecaptcha",
+            "ngAnimate",
+            "ngAria",
             "ngSanitize",
+            "ngMaterial",
             "ui.router",
             "ui.router.title",
             "br.services.subscribe",
