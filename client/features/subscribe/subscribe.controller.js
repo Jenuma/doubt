@@ -9,7 +9,7 @@
 (function() {
     "use strict";
     
-    function SubscribeController($mdDialog, vcRecaptchaService, subscribeService) {
+    function SubscribeController($timeout, $mdDialog, vcRecaptchaService, subscribeService) {
         var vm = this;
         
         vm.setWidgetId = function(widgetId) {
@@ -24,6 +24,14 @@
         vm.reloadRecaptcha = function() {
             vcRecaptchaService.reload(vm.widgetId);
             vm.response = null;
+        };
+        
+        vm.submitFormWithReturnPress = function(event) {
+            if(event.keyCode === 13) {
+                $timeout(function() {
+                    angular.element(document.querySelector("#subscribe-button")).trigger("click");
+                });
+            }
         };
         
         vm.subscribe = function() {
@@ -51,11 +59,12 @@
                 );
                 
                 vm.email = "";
+                vm.reloadRecaptcha();
             });
         };
     }
     
-    SubscribeController.$inject = ["$mdDialog", "vcRecaptchaService", "subscribeService"];
+    SubscribeController.$inject = ["$timeout", "$mdDialog", "vcRecaptchaService", "subscribeService"];
     
     angular
         .module("br.controllers.subscribe", [])

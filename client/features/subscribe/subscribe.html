@@ -15,16 +15,18 @@
                     class="form-control"
                     required
                     ng-model="subscribeCtrl.email"
+                    ng-keyup="subscribeCtrl.submitFormWithReturnPress($event)"
                 />
 
                 <span class="input-group-btn">
-                    <button class="btn btn-primary g-recaptcha"
+                    <button id="subscribe-button"
+                            class="btn btn-primary g-recaptcha"
                             vc-recaptcha
                             key="'6LdI4CMUAAAAAG629T_DbjcOGn43n9TZ707EBwL8'"
                             on-create="subscribeCtrl.setWidgetId(widgetId)"
                             on-success="subscribeCtrl.setResponse(response)"
                             on-expire="subscribeCtrl.reloadRecaptcha()"
-                            type="submit">
+                            type="button">
                         Subscribe
                     </button>
                 </span>
