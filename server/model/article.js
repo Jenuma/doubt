@@ -9,6 +9,7 @@
 var mongoose = require("mongoose");
 
 var ArticleSchema = new mongoose.Schema({
+    id: Number, default: 0,
     title: String, default: "",
     date: String, default: "",
     route: String, default: "",
