@@ -51,7 +51,21 @@ module.exports = function() {
         });
     }
     
+    function unsubscribe(req, res, next) {
+        var Subscriber = require("../model/subscriber").Subscriber;
+        var subscriberEmail = decodeURIComponent(req.params.email);
+        
+        Subscriber.findOneAndRemove({email: subscriberEmail}).exec()
+            .then(function(result) {
+                res.status(204).send("You have successfully unsubscribed from Become Rampant email notifications.");
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+    }
+    
     router.post("/", subscribe);
+    router.get("/unsubscribe/:email", unsubscribe);
     
     return router;
 };
