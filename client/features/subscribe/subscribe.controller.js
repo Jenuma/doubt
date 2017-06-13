@@ -35,32 +35,45 @@
         };
         
         vm.subscribe = function() {
-            var userInfo = {
-                recaptchaResponse: vm.response,
-                email: vm.email
-            }
-            
-            subscribeService.subscribe(userInfo).then(function(response) {
-                var modalTitle = "You are now subscribed to Become Rampant.";
-                var modalTextContent = "You will receive an email anytime a new article is posted.";
-                
-                if(response.substring) {
-                    modalTitle = "You are already subscribed to Become Rampant.";
-                    modalTextContent = "";
-                }
-                
+            var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(regex.test(vm.email)) {
+                var userInfo = {
+                    recaptchaResponse: vm.response,
+                    email: vm.email
+                };
+
+                subscribeService.subscribe(userInfo).then(function(response) {
+                    var modalTitle = "You are now subscribed to Become Rampant.";
+                    var modalTextContent = "You will receive an email anytime a new article is posted.";
+
+                    if(response.substring) {
+                        modalTitle = "You are already subscribed to Become Rampant.";
+                        modalTextContent = "";
+                    }
+
+                    $mdDialog.show(
+                        $mdDialog.alert()
+                            .parent(angular.element(document.querySelector("body")))
+                            .clickOutsideToClose(true)
+                            .title(modalTitle)
+                            .textContent(modalTextContent)
+                            .ok("Got it!")
+                    );
+
+                    vm.email = "";
+                    vm.reloadRecaptcha();
+                });
+            } else {
                 $mdDialog.show(
                     $mdDialog.alert()
                         .parent(angular.element(document.querySelector("body")))
                         .clickOutsideToClose(true)
-                        .title(modalTitle)
-                        .textContent(modalTextContent)
-                        .ok("Got it!")
+                        .title("Please enter a valid email address.")
+                        .textContent("")
+                        .ok("Go back")
                 );
-                
-                vm.email = "";
                 vm.reloadRecaptcha();
-            });
+            }
         };
     }
     

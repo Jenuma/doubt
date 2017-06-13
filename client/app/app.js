@@ -116,12 +116,21 @@
             }
         };
         
+        var unsubscribedState = {
+            name: "unsubscribed",
+            url: "/unsubscribed",
+            templateUrl: "/features/unsubscribed/unsubscribed.html",
+            resolve: {
+                $title: function() {return "Unsubscribed - Become Rampant";}
+            }
+        };
+        
         var notFoundState = {
             name: "notFound",
             url: "*path",
             templateUrl: "/features/error/404.html",
             resolve: {
-                $title: function() {return "404 - Not Found";}
+                $title: function() {return "404 - Not Found - Become Rampant";}
             }
         };
         
@@ -136,6 +145,7 @@
         $stateProvider.state(searchState);
         $stateProvider.state(termsOfServiceState);
         $stateProvider.state(privacyPolicyState);
+        $stateProvider.state(unsubscribedState);
         $stateProvider.state(notFoundState);
     }
     

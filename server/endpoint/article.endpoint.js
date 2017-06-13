@@ -11,7 +11,8 @@ module.exports = function() {
     
     function getThumbnails(req, res, next) {
         var Article = require("../model/article").Article;
-        Article.find({}, {"_id": 0, "title": 1, "date": 1, "route": 1}).exec()
+//        Article.find({}, {"_id": 0, "title": 1, "date": 1, "route": 1}).exec()
+        Article.find({}, {}).sort({id: -1}).exec()
             .then(function(results) {
                 res.status(200).json(results);
             })

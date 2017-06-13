@@ -57,7 +57,7 @@ module.exports = function() {
         
         Subscriber.findOneAndRemove({email: subscriberEmail}).exec()
             .then(function(result) {
-                res.status(204).send("You have successfully unsubscribed from Become Rampant email notifications.");
+                res.status(204).redirect("http://localhost:8080/unsubscribed");
             })
             .catch(function(err) {
                 console.log(err);

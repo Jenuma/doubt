@@ -1,4 +1,42 @@
+p:first-child:first-letter {
+    display: block;
+    float: left;
+    margin: 7px 2px 0 0;
+    font-size: 72px;
+    color: #D67902;
+}
+
 .article-photo {
     width: 600px;
     height: 400px;
+    
+    margin-bottom: 2em;
+    
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.jssocials-share {
+    display: block;
+    margin: 0.3em;
+}
+
+.jssocials-share-link {
+    border-radius: 50%;
+}
+
+#social-container {
+    float: right;
+}
+
+#social-share {
+    position: fixed;
+    
+    margin-left: 1em;
+    padding: 0.5em;
+    
+    text-align: center;
+    
+    border: 1px solid #D3D3D3;
+    border-bottom: 3px solid #D67902;
+    border-radius: 3px;
 }

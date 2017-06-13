@@ -99,7 +99,7 @@
 /*
  * Animated Underline Effect
  */
-.navbar-default .navbar-brand:before,
+/*.navbar-default .navbar-brand:before,*/
 .navbar-default .navbar-nav > li > a:before {
     content: "";
     
@@ -124,7 +124,7 @@
     -webkit-transition: all 0.3s ease-in-out 0s;
 }
 
-.navbar-default .navbar-brand:hover:before,
+/*.navbar-default .navbar-brand:hover:before,*/
 .navbar-default .navbar-nav > li > a:hover:before {
     visibility: visible;
     
@@ -150,7 +150,7 @@
 
 #logo {
     float: left;
-    margin-top: -0.125em;
+    margin-top: -0.5em;
     margin-right: 0.5em;
 }
 
