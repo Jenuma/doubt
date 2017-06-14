@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" href="/features/article/article.css"/>
 
+<h1>{{articleCtrl.article.title}}</h1>
+
 <div id="article-container">
-    <h1>{{articleCtrl.article.title}}</h1>
-    
     <div id="social-container">
         <div id="social-share">
             SHARE<br/>
@@ -13,18 +13,26 @@
                     text: document.title,
                     showLabel: false,
                     showCount: false,
+                    shareIn: "popup",
                     shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
                 });
             </script>
-<!--
-            <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br/>
-            <div class="fb-share-button" data-href="https://localhost:8080/blog/why-you-should-stop-caring-about-the-news" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocalhost%3A8080%2Fblog%2Fwhy-you-should-stop-caring-about-the-news&amp;src=sdkpreparse">Share</a></div><br/>
-            <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><script type="IN/Share"></script>
--->
         </div>
     </div>
     
     <img ng-src="{{'/assets/img/' + articleCtrl.article.route + '/1.jpg'}}" class="article-photo img-responsive"/>
     
     <p ng-bind-html="articleCtrl.article.content"></p>
+    
+    <span id="mobile-share-label">Share this article:</span>
+    <div id="mobile-social"></div>
+    <script>
+        $("#mobile-social").jsSocials({
+            url: window.location,
+            text: document.title,
+            showLabel: false,
+            showCount: false,
+            shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+        });
+    </script>
 </div>

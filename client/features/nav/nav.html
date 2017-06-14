@@ -16,9 +16,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li ng-class="{'active': $title === 'Blog - Become Rampant'}"><a ui-sref="blog">Blog</a></li>
-                    <li ng-class="{'active': $title === 'Donate - Become Rampant'}"><a ui-sref="donate">Donate</a></li>
-                    <li ng-class="{'active': $title === 'About - Become Rampant'}"><a ui-sref="about">About</a></li>
+                    <li ng-class="{'active': $title === 'Blog - Become Rampant'}"><a data-toggle="collapse" data-target=".navbar-collapse.in" ui-sref="blog">Blog</a></li>
+                    <li ng-class="{'active': $title === 'Donate - Become Rampant'}"><a data-toggle="collapse" data-target=".navbar-collapse.in" ui-sref="donate">Donate</a></li>
+                    <li ng-class="{'active': $title === 'About - Become Rampant'}"><a data-toggle="collapse" data-target=".navbar-collapse.in" ui-sref="about">About</a></li>
                     <!--<li ng-class="{'active': $title === 'Store - Become Rampant'}"><a ui-sref="store">Store</a></li>-->
                 </ul>
                 <form class="navbar-form navbar-right">

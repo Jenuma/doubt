@@ -10,7 +10,7 @@ p:first-child:first-letter {
     width: 600px;
     height: 400px;
     
-    margin-bottom: 2em;
+    margin-bottom: 5em;
     
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
@@ -40,3 +40,78 @@ p:first-child:first-letter {
     border-bottom: 3px solid #D67902;
     border-radius: 3px;
 }
+
+#mobile-social, #mobile-share-label {
+    display: none;
+}
+
+/*
+ * Mobile
+ */
+/*
+@media only screen and (max-width: 425px) {
+    h1 {
+        font-size: 4em;
+    }
+    
+    .article-photo {
+        height: 200px;
+    }
+    
+    .jssocials-share {
+        display: inline-block;
+        margin: 0.3em;
+    }
+    
+    .jssocials-shares {
+        font-size: 3.5em;
+    }
+    
+    #social-container, #social-share {
+        display: none;
+    }
+    
+    #mobile-social {
+        display: block;
+        margin-bottom: 5em;
+        text-align: center;
+    }
+    
+    #mobile-share-label {
+        display: inline;
+        font-size: 3.5em;
+    }
+}
+*/
+
+/*
+ * Tablet
+ */
+/*
+@media only screen and (min-width: 768px) {
+    .article-photo {
+        height: 400px;
+    }
+}
+*/
+
+/*
+ * Laptop
+ */
+/*
+@media only screen and (min-width: 1440px) {
+    
+}
+*/
+
+/*
+ * 4k
+ */
+/*
+@media only screen and (min-width: 2560px) {
+    .article-photo {
+        width: 100%;
+        height: 600px;
+    }
+}
+*/

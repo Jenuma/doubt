@@ -109,13 +109,13 @@ md-dialog p {
 }
 
 #sticky-foot {
-/*    box-shadow: 0 -2px 10px 0 var(--accent-color);*/
     box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.16);
 }
 
 /*
  * Mobile
  */ 
+/*
 @media only screen and
     (max-device-width: 320px),
     (max-device-width: 375px),
@@ -134,11 +134,13 @@ md-dialog p {
             font-size: 0.125em;
         }
 }
+*/
 
 /*
  * Tablet
  */
-@media only screen and (max-device-width: 768px) {
+/*
+@media only screen and (width: 768px) {
     a {
         position: relative;
 
@@ -147,9 +149,33 @@ md-dialog p {
     }
     
     #content {
-        margin: 0 3em;
-        max-width: 100%;
-
-        font-size: 0.25em;
+        max-width: 80%;
     }
 }
+*/
+
+/*
+ * Laptop
+ */
+/*
+@media only screen and (min-width: 1440px) {
+    #content {
+        max-width: 40%;
+    }
+}
+*/
+
+/*
+ * 4k
+ */
+/*
+@media only screen and (min-width: 2560px) {
+    p {
+        font-size: 25px;
+    }
+    
+    #content {
+        max-width: 35%;
+    }
+}
+*/

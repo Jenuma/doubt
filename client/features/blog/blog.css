@@ -77,3 +77,14 @@
 .article-link:hover:after {
     opacity: 1;
 }
+
+/*
+ * Mobile
+ */
+/*
+@media only screen and (max-width: 768px) {
+    .article-date {
+        display: none;
+    }
+}
+*/
