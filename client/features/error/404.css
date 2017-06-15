@@ -1,3 +1,8 @@
-#content {
-    width: 50%;
+/*
+ * 1920
+ */
+@media only screen and (width: 120em) {
+    #content {
+        width: 50%;
+    }
 }

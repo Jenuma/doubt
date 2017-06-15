@@ -1,26 +1,16 @@
-#subscribe-container {
-    color: #D67902;
-    background-color: #000000;
-    
-    text-align: center;
+h2 {
+    font-size: 2em;
 }
 
-#subscribe-content {
-    margin: 0 auto;
-    padding-top: 2em;
-    padding-bottom: 3em;
-    
-    width: 50%;
+md-dialog p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 100%;
 }
 
 /*
  * Bootstrap Overrides
  */
-.input-group {
-    margin: 0 auto;
-    max-width: 50%;
-}
-
 .form-control {
     border: none;
     box-shadow: none;
@@ -31,38 +21,66 @@
 }
 
 .btn-primary {
-    height: 34px;
-    
+    height: 2.4em; /* Was 34px */
+
     color: #D67902;
     background-color: #FFFFFF;
-    
+
     border-top: none;
     border-bottom:none;
-    border-left: 1px solid black;
+    border-left: 0.0625em solid #000000;
     border-right: none;
     
-    -o-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
     color: #FFFFFF;
     background-color: #D67902;
 }
 
+#subscribe-container {
+    color: #D67902;
+    background-color: #000000;
+
+    text-align: center;
+}
+
+#subscribe-content {
+    margin: 0 auto;
+    padding-top: 0.125em;
+    padding-bottom: 1em;
+
+    width: 90%;
+}
+
 /*
- * Mobile
+ * 1920
  */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (width: 120em) {
     #subscribe-content {
-        width: 90%;
+        padding-top: 2em;
+        padding-bottom: 3em;
+
+        width: 50%;
+    }
+
+    /*
+     * Bootstrap Overrides
+     */
+    .input-group {
+        margin: 0 auto;
+        max-width: 50%;
     }
 }
+
 
 /*
  * Tablet
  */
+/*
 @media only screen and (max-device-width: 768px) {
     #subscribe-content {
         margin: -1px auto;
@@ -75,13 +93,16 @@
         max-width: 80%;
     }
 }
+*/
 
 /*
  * Laptop
  */
+/*
 @media only screen and (min-device-width: 1024px) {    
     .input-group {
         margin: 0 auto;
         max-width: 100%;
     }
 }
+*/

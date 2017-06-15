@@ -153,7 +153,6 @@
     
     angular
         .module("app", [
-            "vcRecaptcha",
             "ngAnimate",
             "ngAria",
             "ngSanitize",

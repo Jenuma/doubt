@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/features/blog/blog.css"/>
 
 <div id="blog-container">
+    <h1>Latest Articles</h1>
     <div class="article-panel-outer" ng-repeat="thumbnail in blogCtrl.thumbnails">
         <div class="article-panel">
             <img ng-src="{{'/assets/img/' + thumbnail.route + '/1.jpg'}}" class="article-thumb img-responsive"/><br />
@@ -8,6 +9,5 @@
             <span class="article-title">{{thumbnail.title}}</span>
             <a class="article-link" ui-sref="article({articleRoute: thumbnail.route})"></a>
         </div>
-        <span class="article-date">{{thumbnail.date}}</span>
     </div>
 </div>

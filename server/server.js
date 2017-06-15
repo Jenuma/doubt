@@ -24,7 +24,6 @@ app.use(bodyParser.json());
 // ---------------------------------------------------------------------------------------------------------|
 app.use("/angular-ui-router-title", express.static(__dirname + "/../node_modules/angular-ui-router-title"));
 app.use("/jssocials", express.static(__dirname + "/../node_modules/jssocials/dist"));
-app.use("/angular-recaptcha", express.static(__dirname + "/../node_modules/angular-recaptcha/release"));
 app.use("/app", express.static(__dirname + "/../client/app"));
 app.use("/features", express.static(__dirname + "/../client/features"));
 app.use("/assets", express.static(__dirname + "/../assets"));

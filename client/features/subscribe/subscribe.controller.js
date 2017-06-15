@@ -9,36 +9,13 @@
 (function() {
     "use strict";
     
-    function SubscribeController($timeout, $mdDialog, vcRecaptchaService, subscribeService) {
+    function SubscribeController($timeout, $mdDialog, subscribeService) {
         var vm = this;
-        
-        vm.setWidgetId = function(widgetId) {
-            vm.widgetId = widgetId;
-        };
-        
-        vm.setResponse = function(response) {
-            vm.response = response;
-            vm.subscribe();
-        };
-        
-        vm.reloadRecaptcha = function() {
-            vcRecaptchaService.reload(vm.widgetId);
-            vm.response = null;
-        };
-        
-        vm.submitFormWithReturnPress = function(event) {
-            if(event.keyCode === 13) {
-                $timeout(function() {
-                    angular.element(document.querySelector("#subscribe-button")).trigger("click");
-                });
-            }
-        };
         
         vm.subscribe = function() {
             var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if(regex.test(vm.email)) {
                 var userInfo = {
-                    recaptchaResponse: vm.response,
                     email: vm.email
                 };
 
@@ -72,12 +49,11 @@
                         .textContent("")
                         .ok("Go back")
                 );
-                vm.reloadRecaptcha();
             }
         };
     }
     
-    SubscribeController.$inject = ["$timeout", "$mdDialog", "vcRecaptchaService", "subscribeService"];
+    SubscribeController.$inject = ["$timeout", "$mdDialog", "subscribeService"];
     
     angular
         .module("br.controllers.subscribe", [])
