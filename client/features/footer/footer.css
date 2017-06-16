@@ -25,16 +25,21 @@
 }
 
 /*
- * 1920
+ * 768
  */
-@media only screen and (width: 120em) {
+@media only screen and (min-width: 48em) {
     #legal > li {
         display: inline;
-
+        
         margin-left: 1em;
         margin-right: 1em;
     }
+}
 
+/*
+ * 1920
+ */
+@media only screen and (width: 120em) {
     /*
      * Animated Underline Effect
      */

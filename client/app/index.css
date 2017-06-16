@@ -60,12 +60,31 @@ a:visited {
     display: block;
     flex: 1 1 0%;
 
+    padding-top: 5em;
     margin-left: 1em;
     margin-right: 1em;
 }
 
 #sticky-foot {
     box-shadow: 0 -0.125em 0.625em 0 rgba(0, 0, 0, 0.16);
+}
+
+/*
+ * 768
+ */
+@media only screen and (min-width: 48em) {
+    #footer {
+        margin-top: -0.2em;
+    }
+}
+
+/*
+ * 1024
+ */
+@media only screen and (min-width: 64em) {
+    a {
+        text-decoration: none;
+    }
 }
 
 /*
@@ -97,12 +116,6 @@ a:visited {
         color: #D67902;
     }
 
-    /*
-    a:visited {
-        color: var(--visited-color);
-    }
-    */
-
     #ie-warning {
         position: fixed;
         top: 0;
@@ -121,79 +134,4 @@ a:visited {
         color: #000000;
         text-decoration: underline;
     }
-
-    #content {
-        margin: 0 auto;
-        max-width: 30%;
-    }
 }
-
-
-
-/*
- * Mobile
- */ 
-/*
-@media only screen and
-    (max-device-width: 320px),
-    (max-device-width: 375px),
-    (max-device-width: 425px) {
-        a {
-            position: relative;
-
-            color: #D67902;
-            text-decoration: underline;
-        }
-        
-        #content {
-            margin: 1em;
-            max-width: 100%;
-
-            font-size: 0.125em;
-        }
-}
-*/
-
-/*
- * Tablet
- */
-/*
-@media only screen and (width: 768px) {
-    a {
-        position: relative;
-
-        color: #D67902;
-        text-decoration: underline;
-    }
-    
-    #content {
-        max-width: 80%;
-    }
-}
-*/
-
-/*
- * Laptop
- */
-/*
-@media only screen and (min-width: 1440px) {
-    #content {
-        max-width: 40%;
-    }
-}
-*/
-
-/*
- * 4k
- */
-/*
-@media only screen and (min-width: 2560px) {
-    p {
-        font-size: 25px;
-    }
-    
-    #content {
-        max-width: 35%;
-    }
-}
-*/

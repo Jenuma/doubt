@@ -8,9 +8,6 @@ md-dialog p {
     line-height: 100%;
 }
 
-/*
- * Bootstrap Overrides
- */
 .form-control {
     border: none;
     box-shadow: none;
@@ -21,7 +18,7 @@ md-dialog p {
 }
 
 .btn-primary {
-    height: 2.4em; /* Was 34px */
+    height: 2.45em;
 
     color: #D67902;
     background-color: #FFFFFF;
@@ -57,52 +54,38 @@ md-dialog p {
 }
 
 /*
- * 1920
+ * 768
  */
-@media only screen and (width: 120em) {
-    #subscribe-content {
-        padding-top: 2em;
-        padding-bottom: 3em;
+@media only screen and (min-width: 48em) {
+    #subscribe-content .input-group {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
 
+/*
+ * 1024
+ */
+@media only screen and (min-width: 64em) {
+    #subscribe-content .input-group {
         width: 50%;
     }
-
-    /*
-     * Bootstrap Overrides
-     */
-    .input-group {
-        margin: 0 auto;
-        max-width: 50%;
-    }
 }
 
-
 /*
- * Tablet
+ * 1440
  */
-/*
-@media only screen and (max-device-width: 768px) {
-    #subscribe-content {
-        margin: -1px auto;
-        width: 100%;
-        font-size: 0.25em;
-    }
-    
-    .input-group {
-        margin: 0 auto;
-        max-width: 80%;
+@media only screen and (min-width: 90em) {
+    #subscribe-content .btn-primary {
+        height: 2.42em;
     }
 }
-*/
 
 /*
- * Laptop
+ * 1440
  */
-/*
-@media only screen and (min-device-width: 1024px) {    
-    .input-group {
-        margin: 0 auto;
-        max-width: 100%;
+@media only screen and (min-width: 120em) {
+    #subscribe-content .input-group {
+        width: 35%;
     }
 }
-*/
