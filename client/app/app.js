@@ -151,6 +151,14 @@
     
     config.$inject = ["$stateProvider", "$locationProvider"];
     
+    function run($rootScope) {
+        $rootScope.$on("$stateChangeSuccess", function() {
+            $("html, body").animate({scrollTop: 0}, 200);
+        });
+    }
+    
+    run.$inject = ["$rootScope"];
+    
     angular
         .module("app", [
             "ngAnimate",
@@ -167,5 +175,6 @@
             "br.controllers.search",
             "br.controllers.article"
         ])
-        .config(config);
+        .config(config)
+        .run(run);
 })();
