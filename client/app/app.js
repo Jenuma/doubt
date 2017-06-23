@@ -151,6 +151,41 @@
     
     config.$inject = ["$stateProvider", "$locationProvider"];
     
+    function AppController($mdDialog, $cookies) {
+        var vm = this;
+        
+        vm.dialogOpen = false;
+        
+        function ExitIntentController($mdDialog) {
+            var vm = this;
+            
+            vm.close = function() {
+                $mdDialog.hide();
+            };
+        }
+        
+        ExitIntentController.$inject = ["$mdDialog"];
+        
+        vm.exitIntent = function() {
+            if(!$cookies.get("pest") && !vm.dialogOpen) {
+                $mdDialog.show({
+                    templateUrl: "exitIntent.html",
+                    controller: ExitIntentController,
+                    controllerAs: "exitIntentCtrl",
+                    clickOutsideToClose: true,
+                    onRemoving: function() {
+                        $cookies.put("pest", "1");
+                        vm.dialogOpen = false;
+                    }
+                });
+                
+                vm.dialogOpen = true;
+            }
+        };
+    }
+    
+    AppController.$inject = ["$mdDialog", "$cookies"];
+    
     function run($rootScope) {
         $rootScope.$on("$stateChangeSuccess", function() {
             $("html, body").animate({scrollTop: 0}, 200);
@@ -165,6 +200,7 @@
             "ngAria",
             "ngSanitize",
             "ngMaterial",
+            "ngCookies",
             "ui.router",
             "ui.router.title",
             "br.services.subscribe",
@@ -176,5 +212,6 @@
             "br.controllers.article"
         ])
         .config(config)
+        .controller("AppController", AppController)
         .run(run);
 })();
