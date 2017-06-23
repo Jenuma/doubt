@@ -2,6 +2,10 @@ h1 {
     margin-left: 0.25em;
 }
 
+p {
+    margin-left: 0.5em;
+}
+
 .article-panel-outer {
     display: inline-block;
     

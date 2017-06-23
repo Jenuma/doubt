@@ -38,7 +38,6 @@
                     );
 
                     vm.email = "";
-                    vm.reloadRecaptcha();
                 });
             } else {
                 $mdDialog.show(

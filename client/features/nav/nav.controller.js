@@ -9,15 +9,25 @@
 (function() {
     "use strict";
     
-    function NavController($state) {
+    function NavController($mdDialog, $state) {
         var vm = this;
         
         vm.search = function() {
-            $state.go("search", {"query": vm.query});
+            if(vm.query && /\S/.test(vm.query)) {
+                $state.go("search", {"query": vm.query});
+            } else {
+                $mdDialog.show(
+                    $mdDialog.alert()
+                        .parent(angular.element(document.querySelector("body")))
+                        .clickOutsideToClose(true)
+                        .title("Please enter a search query.")
+                        .ok("Dismiss")
+                );
+            }
         };
     }
     
-    NavController.$inject = ["$state"];
+    NavController.$inject = ["$mdDialog", "$state"];
     
     angular
         .module("br.controllers.nav", [])
