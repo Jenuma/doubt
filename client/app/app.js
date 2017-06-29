@@ -116,6 +116,15 @@
             }
         };
         
+        var subscriptionConfirmedState = {
+            name: "subscription-confirmed",
+            url: "/subscription-confirmed",
+            templateUrl: "/features/subscription-confirmed/subscription-confirmed.html",
+            resolve: {
+                $title: function() {return "Subscription Confirmed - Become Rampant";}
+            }
+        };
+        
         var unsubscribedState = {
             name: "unsubscribed",
             url: "/unsubscribed",
@@ -145,6 +154,7 @@
         $stateProvider.state(searchState);
         $stateProvider.state(termsOfServiceState);
         $stateProvider.state(privacyPolicyState);
+        $stateProvider.state(subscriptionConfirmedState);
         $stateProvider.state(unsubscribedState);
         $stateProvider.state(notFoundState);
     }

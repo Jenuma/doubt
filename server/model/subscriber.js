@@ -9,7 +9,9 @@
 var mongoose = require("mongoose");
 
 var SubscriberSchema = new mongoose.Schema({
-    email: String, default: ""
+    email: String, default: "",
+    uuid: String, default: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    activated: Boolean, default: false
 });
 
 exports.Subscriber = mongoose.model("Subscriber", SubscriberSchema, "subscriber");

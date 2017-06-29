@@ -13,15 +13,18 @@
         var vm = this;
         
         vm.subscribe = function() {
-            var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            if(regex.test(vm.email)) {
+//            var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            
+//            if(regex.test(vm.email)) {
                 var userInfo = {
                     email: vm.email
                 };
 
                 subscribeService.subscribe(userInfo).then(function(response) {
-                    var modalTitle = "You are now subscribed to Become Rampant.";
-                    var modalTextContent = "You will receive an email anytime a new article is posted.";
+//                    var modalTitle = "You are now subscribed to Become Rampant.";
+//                    var modalTextContent = "You will receive an email anytime a new article is posted.";
+                    var modalTitle = "Confirm Your Email Address";
+                    var modalTextContent = "An email was sent to " + vm.email + ". Click on the link in that email to confirm your email address.";
 
                     if(response.substring) {
                         modalTitle = "You are already subscribed to Become Rampant.";
@@ -39,16 +42,16 @@
 
                     vm.email = "";
                 });
-            } else {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                        .parent(angular.element(document.querySelector("body")))
-                        .clickOutsideToClose(true)
-                        .title("Please enter a valid email address.")
-                        .textContent("")
-                        .ok("Go back")
-                );
-            }
+//            } else {
+//                $mdDialog.show(
+//                    $mdDialog.alert()
+//                        .parent(angular.element(document.querySelector("body")))
+//                        .clickOutsideToClose(true)
+//                        .title("Please enter a valid email address.")
+//                        .textContent("")
+//                        .ok("Go back")
+//                );
+//            }
         };
     }
     
